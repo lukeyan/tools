@@ -1,0 +1,13 @@
+{
+    "name": "lukeyan/repeat-t",
+    "description": "this is a tool package",
+    "type": "library",
+    "license": "Apache License",
+    "authors": [
+        {
+            "name": "lukeyan",
+            "email": "lukeyan2008@gmail.com"
+        }
+    ],
+    "require": {}
+}
