@@ -1,5 +1,7 @@
 <?php
-
+/*
+* Geohash
+*/
 namespace Lukeyan\Map;
 
 class Geohash {
