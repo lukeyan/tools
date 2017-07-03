@@ -26,7 +26,7 @@ class Notificationpush {
 
 	function sendAndroidBroadcast() {
 		try {
-			$brocast = new AndroidBroadcast();
+			$brocast = new \AndroidBroadcast();
 			$brocast->setAppMasterSecret($this->appMasterSecret);
 			$brocast->setPredefinedKeyValue("appkey",           $this->appkey);
 			$brocast->setPredefinedKeyValue("timestamp",        $this->timestamp);
@@ -49,7 +49,7 @@ class Notificationpush {
 
 	function sendAndroidUnicast() {
 		try {
-			$unicast = new AndroidUnicast();
+			$unicast = new \AndroidUnicast();
 			$unicast->setAppMasterSecret($this->appMasterSecret);
 			$unicast->setPredefinedKeyValue("appkey",           $this->appkey);
 			$unicast->setPredefinedKeyValue("timestamp",        $this->timestamp);
@@ -74,7 +74,7 @@ class Notificationpush {
 
 	function sendAndroidFilecast() {
 		try {
-			$filecast = new AndroidFilecast();
+			$filecast = new \AndroidFilecast();
 			$filecast->setAppMasterSecret($this->appMasterSecret);
 			$filecast->setPredefinedKeyValue("appkey",           $this->appkey);
 			$filecast->setPredefinedKeyValue("timestamp",        $this->timestamp);
@@ -119,7 +119,7 @@ class Notificationpush {
 								   		)
 					  	);
 					  
-			$groupcast = new AndroidGroupcast();
+			$groupcast = new \AndroidGroupcast();
 			$groupcast->setAppMasterSecret($this->appMasterSecret);
 			$groupcast->setPredefinedKeyValue("appkey",           $this->appkey);
 			$groupcast->setPredefinedKeyValue("timestamp",        $this->timestamp);
@@ -142,7 +142,7 @@ class Notificationpush {
 
 	function sendAndroidCustomizedcast() {
 		try {
-			$customizedcast = new AndroidCustomizedcast();
+			$customizedcast = new \AndroidCustomizedcast();
 			$customizedcast->setAppMasterSecret($this->appMasterSecret);
 			$customizedcast->setPredefinedKeyValue("appkey",           $this->appkey);
 			$customizedcast->setPredefinedKeyValue("timestamp",        $this->timestamp);
@@ -166,7 +166,7 @@ class Notificationpush {
 
 	function sendAndroidCustomizedcastFileId() {
 		try {
-			$customizedcast = new AndroidCustomizedcast();
+			$customizedcast = new \AndroidCustomizedcast();
 			$customizedcast->setAppMasterSecret($this->appMasterSecret);
 			$customizedcast->setPredefinedKeyValue("appkey",           $this->appkey);
 			$customizedcast->setPredefinedKeyValue("timestamp",        $this->timestamp);
@@ -189,7 +189,7 @@ class Notificationpush {
 
 	function sendIOSBroadcast() {
 		try {
-			$brocast = new IOSBroadcast();
+			$brocast = new \IOSBroadcast();
 			$brocast->setAppMasterSecret($this->appMasterSecret);
 			$brocast->setPredefinedKeyValue("appkey",           $this->appkey);
 			$brocast->setPredefinedKeyValue("timestamp",        $this->timestamp);
@@ -211,7 +211,7 @@ class Notificationpush {
 
 	function sendIOSUnicast() {
 		try {
-			$unicast = new IOSUnicast();
+			$unicast = new \IOSUnicast();
 			$unicast->setAppMasterSecret($this->appMasterSecret);
 			$unicast->setPredefinedKeyValue("appkey",           $this->appkey);
 			$unicast->setPredefinedKeyValue("timestamp",        $this->timestamp);
@@ -234,7 +234,7 @@ class Notificationpush {
 
 	function sendIOSFilecast() {
 		try {
-			$filecast = new IOSFilecast();
+			$filecast = new \IOSFilecast();
 			$filecast->setAppMasterSecret($this->appMasterSecret);
 			$filecast->setPredefinedKeyValue("appkey",           $this->appkey);
 			$filecast->setPredefinedKeyValue("timestamp",        $this->timestamp);
@@ -277,7 +277,7 @@ class Notificationpush {
 								   		)
 					  	);
 					  
-			$groupcast = new IOSGroupcast();
+			$groupcast = new \IOSGroupcast();
 			$groupcast->setAppMasterSecret($this->appMasterSecret);
 			$groupcast->setPredefinedKeyValue("appkey",           $this->appkey);
 			$groupcast->setPredefinedKeyValue("timestamp",        $this->timestamp);
@@ -298,7 +298,7 @@ class Notificationpush {
 
 	function sendIOSCustomizedcast() {
 		try {
-			$customizedcast = new IOSCustomizedcast();
+			$customizedcast = new \IOSCustomizedcast();
 			$customizedcast->setAppMasterSecret($this->appMasterSecret);
 			$customizedcast->setPredefinedKeyValue("appkey",           $this->appkey);
 			$customizedcast->setPredefinedKeyValue("timestamp",        $this->timestamp);
@@ -324,8 +324,8 @@ class Notificationpush {
 }
 
 // Set your appkey and master secret here
-$demo = new Demo("your appkey", "your app master secret");
-$demo->sendAndroidUnicast();
+//$demo = new Demo("your appkey", "your app master secret");
+//$demo->sendAndroidUnicast();
 /* these methods are all available, just fill in some fields and do the test
  * $demo->sendAndroidBroadcast();
  * $demo->sendAndroidFilecast();
