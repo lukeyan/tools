@@ -17,7 +17,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Geohash\\": "src/Map/"
+            "Geohash\\": "src/Map/",
+            "Notification\\": "src/Youmeng/"
         }
     },
     "autoload-dev": {
