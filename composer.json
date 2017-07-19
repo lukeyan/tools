@@ -18,7 +18,8 @@
     "autoload": {
         "psr-4": {
             "Geohash\\": "src/Map/",
-            "Notification\\": "src/Youmeng/"
+            "Notification\\": "src/Youmeng/",
+            "Qcloud\\Sms\\": "src/Qcloudsms/"
         }
     },
     "autoload-dev": {
