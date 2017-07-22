@@ -19,7 +19,8 @@
         "psr-4": {
             "Geohash\\": "src/Map/",
             "Notification\\": "src/Youmeng/",
-            "Qcloud\\Sms\\": "src/Qcloudsms/"
+            "Qcloud\\Sms\\": "src/Qcloudsms/",
+            "Wechatapp\\":"src/Wechatapp/"
         }
     },
     "autoload-dev": {
