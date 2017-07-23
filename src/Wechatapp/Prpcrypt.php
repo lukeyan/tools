@@ -31,14 +31,16 @@ class Prpcrypt
 
         try {
 
-            $module = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_CBC, '');
+            $decrypted = openssl_decrypt($aesCipher, 'AES-128-CBC', $this->key, OPENSSL_RAW_DATA, $aesIV);
 
-            mcrypt_generic_init($module, $this->key, $aesIV);
+            // $module = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_CBC, '');
 
-            //解密
-            $decrypted = mdecrypt_generic($module, $aesCipher);
-            mcrypt_generic_deinit($module);
-            mcrypt_module_close($module);
+            // mcrypt_generic_init($module, $this->key, $aesIV);
+
+            // //解密
+            // $decrypted = mdecrypt_generic($module, $aesCipher);
+            // mcrypt_generic_deinit($module);
+            // mcrypt_module_close($module);
         } catch (\Wechatapp\Exception $e) {
             return array(\Wechatapp\ErrorCode::$IllegalBuffer, null);
         }
