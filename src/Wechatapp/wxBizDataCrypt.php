@@ -10,11 +10,10 @@
  *
  * @copyright Copyright (c) 1998-2014 Tencent Inc.
  */
+namespace Wechatapp;
 
-
-include_once "pkcs7Encoder.php";
-include_once "errorCode.php";
-
+use Wechatapp\Prpcrypt;
+use Wechatapp\PKCS7Encoder;
 
 class WXBizDataCrypt
 {
@@ -26,7 +25,7 @@ class WXBizDataCrypt
      * @param $sessionKey string 用户在小程序登录后获取的会话密钥
      * @param $appid string 小程序的appid
      */
-    public function WXBizDataCrypt( $appid, $sessionKey)
+    public function __construct( $appid, $sessionKey)
     {
         $this->sessionKey = $sessionKey;
         $this->appid = $appid;
@@ -44,17 +43,18 @@ class WXBizDataCrypt
     public function decryptData( $encryptedData, $iv, &$data )
     {
         if (strlen($this->sessionKey) != 24) {
-            return ErrorCode::$IllegalAesKey;
+            return \Wechatapp\ErrorCode::$IllegalAesKey;
         }
         $aesKey=base64_decode($this->sessionKey);
 
 
         if (strlen($iv) != 24) {
-            return ErrorCode::$IllegalIv;
+            return \Wechatapp\ErrorCode::$IllegalIv;
         }
         $aesIV=base64_decode($iv);
 
         $aesCipher=base64_decode($encryptedData);
+
 
         $pc = new Prpcrypt($aesKey);
         $result = $pc->decrypt($aesCipher,$aesIV);
@@ -66,14 +66,14 @@ class WXBizDataCrypt
         $dataObj=json_decode( $result[1] );
         if( $dataObj  == NULL )
         {
-            return ErrorCode::$IllegalBuffer;
+            return \Wechatapp\ErrorCode::$IllegalBuffer;
         }
         if( $dataObj->watermark->appid != $this->appid )
         {
-            return ErrorCode::$IllegalBuffer;
+            return \Wechatapp\ErrorCode::$IllegalBuffer;
         }
         $data = $result[1];
-        return ErrorCode::$OK;
+        return \Wechatapp\ErrorCode::$OK;
     }
 
 }

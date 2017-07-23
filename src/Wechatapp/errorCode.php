@@ -5,7 +5,7 @@
  * Date: 22/07/2017
  * Time: 2:03 PM
  */
-
+namespace Wechatapp;
 /**
  * error code 说明.
  * <ul>
